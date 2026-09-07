@@ -1,14 +1,14 @@
 # Frontend (Vite / React)
-Serialize_Frontend/node_modules/
-Serialize_Frontend/dist/
-Serialize_Frontend/.vite/
-Serialize_Frontend/coverage/
-Serialize_Frontend/*.local
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+frontend/coverage/
+frontend/*.local
 
 # Backend (.NET)
-assessment_api/bin/
-assessment_api/obj/
-assessment_api/TestResults/
+backend/bin/
+backend/obj/
+
 
 # Environment files and local secrets
 .env
