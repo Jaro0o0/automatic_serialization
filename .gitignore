@@ -1,0 +1,28 @@
+# Frontend (Vite / React)
+Serialize_Frontend/node_modules/
+Serialize_Frontend/dist/
+Serialize_Frontend/.vite/
+Serialize_Frontend/coverage/
+Serialize_Frontend/*.local
+
+# Backend (.NET)
+assessment_api/bin/
+assessment_api/obj/
+assessment_api/TestResults/
+
+# Environment files and local secrets
+.env
+.env.*
+!.env.example
+appsettings.Local.json
+appsettings.*.Local.json
+
+# IDE and operating-system files
+.vs/
+.vscode/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+.DS_Store
+Thumbs.db
