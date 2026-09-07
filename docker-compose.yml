@@ -4,6 +4,8 @@ services:
     build: ./backend
     ports:
       - "5000:8080"
+    volumes:
+    - ./backend/data:/app/data
 
   frontend:
     build:

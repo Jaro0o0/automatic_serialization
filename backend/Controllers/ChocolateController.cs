@@ -23,7 +23,11 @@ public class ChocolateController : ControllerBase
     {
         _request = request;
         _cache = cache;
-        _localDataPath = System.IO.Path.Combine(environment.ContentRootPath, "data.txt");
+        _localDataPath = System.IO.Path.Combine(
+            environment.ContentRootPath,
+            "data",
+            "data.txt"
+        );
     }
 
     [HttpPost("{dataType}")]
