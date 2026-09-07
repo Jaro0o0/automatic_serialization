@@ -38,8 +38,9 @@ function Card() {
             return;
         }
 
+         
         const res = await fetch(
-            `http://localhost:5289/serialize/Chocolate/${encodeURIComponent(dataType)}`,
+            `http://localhost:5000/serialize/Chocolate/${encodeURIComponent(dataType)}`,
             {
                 method: "POST",
                 headers: {
