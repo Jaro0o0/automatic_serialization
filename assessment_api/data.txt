@@ -1,4 +1,0 @@
-{"Fact":"Cats come back to full alertness from the sleep state faster than any other creature.","Length":85}
-{"Fact":"At 4 weeks, it is important to play with kittens so that they do not develope a fear of people.","Length":95}
-{"Fact":"Grown cats have 30 teeth. Kittens have about 26 temporary teeth, which they lose when they are about 6 months old.","Length":114}
-{"Fact":"Grown cats have 30 teeth. Kittens have about 26 temporary teeth, which they lose when they are about 6 months old.","Length":114}

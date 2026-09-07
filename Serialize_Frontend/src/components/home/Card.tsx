@@ -10,13 +10,14 @@ import TextField from '@mui/material/TextField';
 
 import { useState } from 'react';
 
+type FileFormat = 'txt' | 'xml' | 'csv';
 
 
 function Card() {
-    const [dataType, setDataType] = useState('');
+    const [dataType, setDataType] = useState<FileFormat | ''>('');
 
         const handleChange = (event: SelectChangeEvent) => {
-        setDataType(event.target.value);
+        setDataType(event.target.value as FileFormat);
     };
 
 
@@ -33,17 +34,19 @@ function Card() {
 
 // fetch_Data
     const fetchData = async () => {
+        if (!dataType || !downloadPath.trim()) {
+            return;
+        }
 
         const res = await fetch(
-            `http://localhost:5289/serialize/Chocolate/${dataType}`,
+            `http://localhost:5289/serialize/Chocolate/${encodeURIComponent(dataType)}`,
             {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify({
-                    format: "csv",
-                    path: downloadPath,
+                    Path: downloadPath.trim(),
                 })
             }
         );
@@ -71,7 +74,7 @@ function Card() {
 
                 {/* Inputs_BOX */}
                 <div className='flex flex-col gap-5'>
-                    <TextField id="outlined-basic" fullWidth label="Save path" variant="outlined"  value={downloadPath}    onChange={handleDownloadPath} />
+                    <TextField id="outlined-basic" fullWidth required label="Save path" variant="outlined" helperText="Full local path where the backend should save the file" value={downloadPath} onChange={handleDownloadPath} />
                     <Box sx={{ minWidth: 120 }}>
                         <FormControl fullWidth>
                             <InputLabel id="demo-simple-select-label">Format type</InputLabel>
@@ -90,7 +93,7 @@ function Card() {
                     </Box>
                 </div>
 
-                <Button variant='contained' size='large' onClick={() => fetchData()} endIcon={<SendIcon />}>Send</Button>
+                <Button variant='contained' size='large' disabled={!dataType || !downloadPath.trim()} onClick={fetchData} endIcon={<SendIcon />}>Send</Button>
 
         </div>
 
