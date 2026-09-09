@@ -8,6 +8,10 @@ import Button from '@mui/material/Button';
 import SendIcon from '@mui/icons-material/Send';
 import TextField from '@mui/material/TextField';
 
+//animations
+import { motion } from 'framer-motion';
+import {container , item} from '../../animations/cardAnimation'
+
 import { useState } from 'react';
 
 type FileFormat = 'txt' | 'xml' | 'csv';
@@ -65,16 +69,26 @@ function Card() {
 
     return ( 
         <>
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 p-8 shadow-xl rounded-2xl w-full max-w-md min-h-[500px] flex flex-col justify-between bg-white">
+        <motion.div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 p-8 shadow-xl rounded-2xl w-full max-w-md min-h-[500px] flex flex-col justify-between bg-white"
+            variants={container}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+        >
 
                 {/* TEXT_BOX */}
-                <div className='mb-6'>
-                    <h1 className="text-2xl font-bold text-gray-800">Serialize into different formats</h1>
+                <motion.div className='mb-6 text-center'
+                    variants={item}
+                >
+                    <h1 className="text-2xl font-bold text-[#1976d2] uppercase">Automatic Serialization</h1>
                     <p className="text-gray-500 mt-1">Choose format and select path to save data</p>
-                </div>
+                </motion.div>
 
                 {/* Inputs_BOX */}
-                <div className='flex flex-col gap-5'>
+                <motion.div className='flex flex-col gap-5'
+                
+                    variants={item}
+                >
                     <TextField id="outlined-basic" fullWidth required label="Save path" variant="outlined" helperText="Full local path where the backend should save the file" value={downloadPath} onChange={handleDownloadPath} />
                     <Box sx={{ minWidth: 120 }}>
                         <FormControl fullWidth>
@@ -92,11 +106,13 @@ function Card() {
                             </Select>
                         </FormControl>
                     </Box>
-                </div>
+                </motion.div>
 
-                <Button variant='contained' size='large' disabled={!dataType || !downloadPath.trim()} onClick={fetchData} endIcon={<SendIcon />}>Send</Button>
+                <Button variant='contained' size='large' component={motion.button} disabled={!dataType || !downloadPath.trim()} onClick={fetchData} endIcon={<SendIcon />}
+                    variants={item}
+                >Send</Button>
 
-        </div>
+        </motion.div>
 
         
 
