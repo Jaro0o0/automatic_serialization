@@ -1,5 +1,4 @@
 using Assesment_Api.Services;
-using Assesment_Api.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,7 +13,7 @@ builder.Services.AddControllers();
 builder.Services.AddMemoryCache(); 
 
 //Custom Services
-builder.Services.AddHttpClient<ChocolateService>();
+builder.Services.AddHttpClient<IChocolateService, ChocolateService>();
 
 //Cors
 builder.Services.AddCors(options =>
@@ -44,5 +43,4 @@ app.MapControllers();
 
 
 app.Run();
-
 

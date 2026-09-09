@@ -1,12 +1,8 @@
-namespace Assesment_Api.Services{
+using Assesment_Api.Models;
 
-    public interface IChocolateService
-    {
+namespace Assesment_Api.Services;
 
-    public void GetDataAsync();
-
-    }
-
-
+public interface IChocolateService
+{
+    Task<ChocolateData?> GetDataAsync();
 }
-

@@ -10,14 +10,14 @@ using System.Xml.Serialization;
 [Route("serialize/[controller]")]
 public class ChocolateController : ControllerBase
 {
-    private readonly ChocolateService _request;
+    private readonly IChocolateService _request;
     private readonly IMemoryCache _cache;
     private readonly string _localDataPath;
 
     private const string CacheKey = "ChocolateDataKey";
 
     public ChocolateController(
-        ChocolateService request,
+        IChocolateService request,
         IMemoryCache cache,
         IWebHostEnvironment environment)
     {

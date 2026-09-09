@@ -5,7 +5,7 @@ namespace Assesment_Api.Services
     
 
 
-    public class ChocolateService
+    public class ChocolateService : IChocolateService
     {
         private readonly HttpClient _httpClient;
 
@@ -16,7 +16,7 @@ namespace Assesment_Api.Services
         }
 
 
-        public async Task<ChocolateData> GetDataAsync()
+        public async Task<ChocolateData?> GetDataAsync()
         {
             // Serwis zajmuje się logiką pobierania danych
             return await _httpClient.GetFromJsonAsync<ChocolateData>("https://catfact.ninja/fact");
