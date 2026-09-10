@@ -89,7 +89,7 @@ function Card() {
                 
                     variants={item}
                 >
-                    <TextField id="outlined-basic" fullWidth required label="Save path" variant="outlined" helperText="Full local path where the backend should save the file" value={downloadPath} onChange={handleDownloadPath} />
+                    <TextField id="outlined-basic" fullWidth required label="Save path" variant="outlined"  value={downloadPath} onChange={handleDownloadPath} />
                     <Box sx={{ minWidth: 120 }}>
                         <FormControl fullWidth>
                             <InputLabel id="demo-simple-select-label">Format type</InputLabel>
