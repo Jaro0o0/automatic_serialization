@@ -32,7 +32,7 @@ function Card() {
     }   
 
 
-//fetch_Patch
+
 
 
 
@@ -64,7 +64,7 @@ function Card() {
     
 
 
-    //handlers
+ 
   
 
     return ( 
