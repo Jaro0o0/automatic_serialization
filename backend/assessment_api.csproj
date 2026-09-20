@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Remove="MyApp.Tests/**/*.cs" />
+    <Compile Remove="Backend.Tests/**/*.cs" />
   </ItemGroup>
 
 </Project>
